@@ -57,7 +57,7 @@ function App() {
 const sampleRecipes = [
   {
     id: uuidv4(),
-    name: "Plain Chicken",
+    name: "Super Plain Chicken",
     servings: 3,
     cookTime: "1:45",
     instructions:

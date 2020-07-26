@@ -9,6 +9,7 @@
 *::before,
 *::after {
   font-family: "Open Sans", sans-serif;
+  background: green;
 }
 
 html {
