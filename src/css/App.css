@@ -1,0 +1,26 @@
+@import-normalize;
+@import "Fonts.css";
+@import "Buttons.css";
+@import "RecipeList.css";
+@import "Recipe.css";
+@import "IngredientList.css";
+
+*,
+*::before,
+*::after {
+  font-family: "Open Sans", sans-serif;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.mr-1 {
+  margin-right: 10px;
+}
