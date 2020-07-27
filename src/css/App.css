@@ -2,6 +2,7 @@
 @import "Fonts.css";
 @import "Buttons.css";
 @import "RecipeList.css";
+@import "RecipeEdit.css";
 @import "Recipe.css";
 @import "IngredientList.css";
 
@@ -9,6 +10,7 @@
 *::before,
 *::after {
   font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
 }
 
 html {
