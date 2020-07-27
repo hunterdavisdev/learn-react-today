@@ -1,15 +1,14 @@
 @import-normalize;
-@import "Fonts.css";
-@import "Buttons.css";
-@import "RecipeList.css";
-@import "Recipe.css";
-@import "IngredientList.css";
+@import 'Fonts.css';
+@import 'Buttons.css';
+@import 'RecipeList.css';
+@import 'Recipe.css';
+@import 'IngredientList.css';
 
 *,
 *::before,
 *::after {
-  font-family: "Open Sans", sans-serif;
-  background: green;
+  font-family: 'Open Sans', sans-serif;
 }
 
 html {
