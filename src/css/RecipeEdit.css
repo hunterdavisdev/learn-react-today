@@ -45,3 +45,23 @@ textarea.recipe-edit__input {
   resize: none;
   height: 200px;
 }
+
+.recipe-edit__ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  margin: 20px;
+  margin-left: 40px;
+}
+
+.recipe-edit__add-ingredient-btn-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .recipe-edit__details-grid,
+  .recipe-edit__ingredient-grid {
+    grid-template-columns: 1fr;
+  }
+}
