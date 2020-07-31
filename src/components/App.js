@@ -1,17 +1,17 @@
-import React, { useState, createContext, useEffect } from "react";
-import RecipeList from "./RecipeList";
-import RecipeEdit from "./RecipeEdit";
-import { v4 as uuidv4 } from "uuid";
-import "../css/App.css";
+import React, { useState, createContext, useEffect } from 'react';
+import RecipeList from './RecipeList';
+import RecipeEdit from './RecipeEdit';
+import { v4 as uuidv4 } from 'uuid';
+import '../css/App.css';
 
 export const RecipeContext = createContext();
-const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";
+const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes';
 
 function App() {
   const [recipes, setRecipes] = useState(sampleRecipes);
   const [selectedRecipeId, setSelectedRecipeId] = useState();
 
-  const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId);
+  const selectedRecipe = recipes.find((recipe) => recipe.id === selectedRecipeId);
   console.log(selectedRecipe);
 
   /** Initial recipe load */
@@ -26,25 +26,17 @@ function App() {
   }, [recipes]);
 
   const handleRecipeAdd = () => setRecipes([...recipes, newRecipeTemplate]);
-  const handleRecipeDelete = id =>
-    setRecipes(recipes.filter(recipe => recipe.id !== id));
-  const handleRecipeSelect = id => setSelectedRecipeId(id);
-
-  // const handleRecipeChange = (id, newRecipe) => {
-  //   const newRecipes = [...recipes];
-  //   const index = newRecipes.findIndex(r => r.id === id);
-  //   newRecipes[index] = newRecipe;
-  //   setRecipes(newRecipes);
-  // };
+  const handleRecipeDelete = (id) => setRecipes(recipes.filter((recipe) => recipe.id !== id));
+  const handleRecipeSelect = (id) => setSelectedRecipeId(id);
 
   const handleRecipeChange = (id, newRecipe) =>
-    setRecipes(recipes.map(recipe => (recipe.id === id ? newRecipe : recipe)));
+    setRecipes(recipes.map((recipe) => (recipe.id === id ? newRecipe : recipe)));
 
   const recipeContextValue = {
     handleRecipeAdd,
     handleRecipeDelete,
     handleRecipeSelect,
-    handleRecipeChange
+    handleRecipeChange,
   };
 
   return (
@@ -57,59 +49,58 @@ function App() {
 
 const newRecipeTemplate = {
   id: uuidv4(),
-  name: "New Recipe",
+  name: 'New Recipe',
   servings: 1,
-  cookTime: "1:00",
-  instructions: "Instructions...",
+  cookTime: '1:00',
+  instructions: 'Instructions...',
   ingredients: [
     {
       id: uuidv4(),
-      name: "Name",
-      amount: "1 Tbsp."
-    }
-  ]
+      name: 'Name',
+      amount: '1 Tbsp.',
+    },
+  ],
 };
 
 const sampleRecipes = [
   {
     id: uuidv4(),
-    name: "Plain Chicken",
+    name: 'Plain Chicken',
     servings: 3,
-    cookTime: "1:45",
-    instructions:
-      "1. Put salt on chicken.\n2. Put chicken in oven.\n3. Eat chicken.",
+    cookTime: '1:45',
+    instructions: '1. Put salt on chicken.\n2. Put chicken in oven.\n3. Eat chicken.',
     ingredients: [
       {
         id: uuidv4(),
-        name: "Chicken",
-        amount: "2 lbs."
+        name: 'Chicken',
+        amount: '2 lbs.',
       },
       {
         id: uuidv4(),
-        name: "Salt",
-        amount: "1 tbsp."
-      }
-    ]
+        name: 'Salt',
+        amount: '1 tbsp.',
+      },
+    ],
   },
   {
     id: uuidv4(),
-    name: "Plain Pork",
+    name: 'Plain Pork',
     servings: 5,
-    cookTime: "0:45",
-    instructions: "1. Put paprika on pork.\n2. Put pork in oven.\n3. Eat pork.",
+    cookTime: '0:45',
+    instructions: '1. Put paprika on pork.\n2. Put pork in oven.\n3. Eat pork.',
     ingredients: [
       {
         id: uuidv4(),
-        name: "Pork",
-        amount: "3 lbs."
+        name: 'Pork',
+        amount: '3 lbs.',
       },
       {
         id: uuidv4(),
-        name: "Paprika",
-        amount: "2 tbsp."
-      }
-    ]
-  }
+        name: 'Paprika',
+        amount: '2 tbsp.',
+      },
+    ],
+  },
 ];
 
 export default App;
